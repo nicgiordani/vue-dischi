@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <!-- vuejs cdn -->
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+  <!-- axios cdn -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.0/axios.min.js" integrity="sha512-DZqqY3PiOvTP9HkjIWgjO6ouCbq+dxqWoJZ/Q+zPYNHmlnI2dQnbJ5bxAHpAMw+LXRm4D72EIRXzvcHQtE8/VQ==" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="css/style.css">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app" class="container">
+    <header>
+      <img id="logo" src="https://www.freepnglogos.com/uploads/spotify-logo-png/spotify-brands-logo-34.png" alt="">
+
+    </header>
+
+    <div class="cds-container container" v-if="discs.lenght != 0">
+
+      <div v-for="disc in discs" class="cd">
+        <img class="cover-cd" :src="disc.poster" :alt="disc.title">
+        <h3>{{ disc.title }}</h3>
+        <span class="author">{{ disc.author }}</span>
+        <span class="year">{{ disc.year }}</span>
+
+      </div>
+
+    </div>
+
+  </div>
+  <script src="js/script.js" charset="utf-8"></script>
+</body>
+</html>
